@@ -38,6 +38,9 @@ app.use('/', express.static('static'));
 app.use(limiter);
 
 import codes from './codes.mjs';
+import buses from './buses.mjs';
+
 app.use('api/v1/codes', codes);
+app.use('api/v1/buses', buses);
 
 export default app;
