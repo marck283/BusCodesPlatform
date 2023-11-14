@@ -4,6 +4,12 @@ const router = Router();
 import Bus from './collezioni/buses.mjs';
 import { Validator } from 'node-input-validator';
 
+var retServerError = (err, res) => {
+    console.log(err);
+    res.status(500).json({ error: "Internal server error. Please try again later." }).send();
+    return;
+};
+
 router.post('/add', (req, res) => {
     const v = new Validator({
         targa: req.targa,
@@ -36,10 +42,8 @@ router.post('/add', (req, res) => {
         return;
     })
         .check(err => {
-            console.log(err);
-            res.status(500).json({ error: "Internal server error. Please try again later." }).send();
-            return;
-        })
+            retServerError(err, res);
+        });
 });
 
 var getBus = async targa => {
@@ -80,9 +84,7 @@ router.patch('/incrementPeople', (req, res) => {
         res.status(200).json({ message: "Bus updated successfully!" }).send();
         return;
     }).catch(err => {
-        console.log(err);
-        res.status(500).json({ error: "Internal server error. Please try again later." }).send();
-        return;
+        retServerError(err, res);
     });
 });
 
@@ -105,10 +107,8 @@ router.patch('/decrementPeople', (req, res) => {
         res.status(200).json({message: "Bus updated successfully!"}).send();
         return;
     }).catch(err => {
-        console.log(err);
-        res.status(500).json({error: "Internal server error. Please try again later." }).send();
-        return;
-    })
+        retServerError(err, res);
+    });
 });
 
 export default router;
