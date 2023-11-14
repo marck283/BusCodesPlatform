@@ -4,5 +4,6 @@ var Schema = _Schema;
 // set up a mongoose model
 export default model('Buses', new Schema({
     targa: String,
-    capacita: Number
+    capacita: Number,
+    numPersone: Number
 }));
