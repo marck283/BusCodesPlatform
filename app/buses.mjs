@@ -40,3 +40,5 @@ router.post('/add', (req, res) => {
         return;
     })
 });
+
+export default router;
