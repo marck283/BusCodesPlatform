@@ -1,0 +1,28 @@
+{
+  "name": "buscodesplatform",
+  "version": "1.0.0",
+  "description": "A platform to associate codes with buses for BusCrowding",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marck283/BusCodesPlatform.git"
+  },
+  "keywords": [
+    "BusCrowding"
+  ],
+  "author": "Marco Lasagna",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/marck283/BusCodesPlatform/issues"
+  },
+  "homepage": "https://github.com/marck283/BusCodesPlatform#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "jest": "^29.7.0",
+    "mongoose": "^8.0.0",
+    "node-input-validator": "^4.5.1"
+  }
+}
